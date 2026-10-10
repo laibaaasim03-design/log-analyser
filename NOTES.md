@@ -15,3 +15,7 @@ Line 30: Wrong password tried for 5 times
 Line 31: Too many authentication failed
 Line 32: More authentication failed
 Line 33: Attacker tried 6 times even though limit is 3
+
+Challenge 1: FileNotFoundError when opening the log file
+Cuase: I wrote a capital K in the file name instead of lowercase k.
+Fix: Copied the path of the file and paste it in the python code.
