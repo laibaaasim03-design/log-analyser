@@ -25,3 +25,4 @@ Why lines[0] is the first line, not lines[1]? Bcs in python, there are arrays an
 
 Again an error when checking which lines have "Failed password" in them , wrote capital "P" instead of small "p".
 
+Didn't know that after deleting print after an if, it will be an error in python so ran the "Failed password" code again with the code telling me how many lines out of 2k is failed password in, 520  lines btw, so now put "#" after every code so it stays out of run command.
