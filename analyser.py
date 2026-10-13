@@ -20,7 +20,7 @@ with open("/workspaces/log-analyser/data/OpenSSH_2k.log") as file:
 #Find the IP addresses of those lines which have failed password in them and store it in "ips"
     import re
 
-# ip = re.findall(r"\d+\.\d+\.\d+\.\d+", lines[5])
+ip = re.findall(r"\d+\.\d+\.\d+\.\d+", lines[5])
 
 ips = []
 
@@ -35,4 +35,10 @@ for Pas in lines:
 #Finding the biggest attacker by tally marks 
 from collections import Counter
 counts = Counter(ips)
-print(counts.most_common(5))
+# print(counts.most_common(5))
+
+#Checking which IP has been attacked above a number of 20
+# for ip, number in counts.items():
+    # if number > 20:
+    #     print("ALERT:", ip, "had", number, "failed logins")
+

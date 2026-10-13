@@ -32,3 +32,5 @@ Collected IPs from failed logins
 Found is a small bag holding that line's IP, and ound[0] takes the IP out of its bag. 
 
 Used "counter" to check which ip addresses has been attacked the most. Result was 286(highest)[186.62.140.253] and 18(lowest) of 5 ip addresses. This was from total of 520 in total. 
+
+Flag IPs with too many failed logins.
