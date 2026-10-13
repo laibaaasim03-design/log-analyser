@@ -62,8 +62,8 @@ conn.commit()
 cur.execute("SELECT ip, COUNT(*) FROM failed_logins GROUP BY ip ORDER BY COUNT(*) DESC LIMIT 6")
 rows = cur.fetchall()
 # print(rows)
-for ip, number in rows:
-    print(ip, "-", number, "failed logins")
+# for ip, number in rows:
+#     print(ip, "-", number, "failed logins")
 conn.close()
 
 #Saving the results in a CSV report
@@ -74,3 +74,14 @@ with open("report.csv", "w", newline="")as f:
         writer.writerow(["IP address", "Failed logins"])
         for ip, number in rows:
             writer.writerow([ip, number])
+
+# Making an HTML page for the analyser
+with open("report.html", "w") as f:
+    f.write("<html><body>\n")
+    f.write("<h1>Failed Login Report</h1>\n")
+    f.write("<table border='1'>\n")
+    f.write("<tr><th>IP address</th><th>Failed logins</th></tr>\n")
+    for ip, number in rows:
+        f.write("<tr><td>" + ip + "</td><td>" + str(number) + "</td></tr>\n")
+    f.write("</table>\n")
+    f.write("</body></html>\n")
