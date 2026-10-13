@@ -1,11 +1,14 @@
 # print("Hello, log analyser!")
+# Opened the log file
 with open("/workspaces/log-analyser/data/OpenSSH_2k.log") as file:
     lines = file.readlines()
 
+# Check the lines in log file and check which lines have failed password in them
 # for Pas in lines:
 #     if "Failed password" in Pas:
 #         print(Pas)
 
+# Count the total number of failed password lines
 # count = 0
 
 # for Pas in lines:
@@ -14,6 +17,7 @@ with open("/workspaces/log-analyser/data/OpenSSH_2k.log") as file:
 
 # print(count)
 
+#Find the IP addresses of those lines which have failed password in them and store it in "ips"
 import re
 
 ip = re.findall(r"\d+\.\d+\.\d+\.\d+", lines[5])

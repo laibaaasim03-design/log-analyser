@@ -28,3 +28,5 @@ Again an error when checking which lines have "Failed password" in them , wrote 
 Didn't know that after deleting print after an if, it will be an error in python so ran the "Failed password" code again with the code telling me how many lines out of 2k is failed password in, 520  lines btw, so now put "#" after every code so it stays out of run command.
 
 Collected IPs from failed logins
+
+Found is a small bag holding that line's IP, and ound[0] takes the IP out of its bag. 
