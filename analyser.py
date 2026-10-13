@@ -56,6 +56,11 @@ cur.execute("DELETE FROM failed_logins")
 for ip in ips:
     cur.execute("INSERT INTO failed_logins (ip) VALUES (?)", (ip,))
 
-cur
 conn.commit()
+
+#Asking the database that which 6 IPs has failed the most?
+cur.execute("SELECT ip, COUNT(*) FROM failed_logins GROUP BY ip ORDER BY COUNT(*) DESC LIMIT 6")
+rows = cur.fetchall()
+print(rows)
+
 conn.close()

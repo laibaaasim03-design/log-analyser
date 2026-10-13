@@ -34,3 +34,8 @@ Found is a small bag holding that line's IP, and ound[0] takes the IP out of its
 Used "counter" to check which ip addresses has been attacked the most. Result was 286(highest)[186.62.140.253] and 18(lowest) of 5 ip addresses. This was from total of 520 in total. 
 
 Flag IPs with too many failed logins.
+
+GROUP BY ip puts all the rows for the same IP together, like tally marks per name.
+COUNT(*) counts the rows in each group.
+ORDER BY COUNT(*) DESC puts the biggest count first.
+LIMIT 6 keeps only the top 6, the same job .most_common(6) did.
