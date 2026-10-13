@@ -39,6 +39,14 @@ counts = Counter(ips)
 
 #Checking which IP has been attacked above a number of 20
 # for ip, number in counts.items():
-    # if number > 20:
-    #     print("ALERT:", ip, "had", number, "failed logins")
+#     if number > 20:
+#         print("ALERT:", ip, "had", number, "failed logins")
 
+import sqlite3
+
+#Creating the database and the table
+conn = sqlite3.connect("logins.db")
+cur = conn.cursor()
+cur.execute("CREATE TABLE IF NOT EXISTS failed_logins (ip TEXT)")
+conn.commit()
+conn.close()
