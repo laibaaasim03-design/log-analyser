@@ -61,6 +61,16 @@ conn.commit()
 #Asking the database that which 6 IPs has failed the most?
 cur.execute("SELECT ip, COUNT(*) FROM failed_logins GROUP BY ip ORDER BY COUNT(*) DESC LIMIT 6")
 rows = cur.fetchall()
-print(rows)
-
+# print(rows)
+for ip, number in rows:
+    print(ip, "-", number, "failed logins")
 conn.close()
+
+#Saving the results in a CSV report
+import csv
+
+with open("report.csv", "w", newline="")as f:
+        writer = csv.writer(f)
+        writer.writerow(["IP address", "Failed logins"])
+        for ip, number in rows:
+            writer.writerow([ip, number])
