@@ -48,5 +48,13 @@ import sqlite3
 conn = sqlite3.connect("logins.db")
 cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS failed_logins (ip TEXT)")
+
+#Clearing old rows so there aren't duplicates each time the code is run
+cur.execute("DELETE FROM failed_logins")
+
+#Saving every IP into the table
+for ip in ips:
+    cur.execute("INSERT INTO failed_logins (ip) VALUES (?)", (ip,))
+
 conn.commit()
 conn.close()
