@@ -77,7 +77,7 @@ with open("report.csv", "w", newline="")as f:
 
 # Making an HTML page for the analyser
 with open("report.html", "w") as f:
-    f.write("<html><body>\n")
+    f.write("<html><head><link rel='stylesheet' href='style.css'></head><body>\n")
     f.write("<h1>Failed Login Report</h1>\n")
     f.write("<table border='1'>\n")
     f.write("<tr><th>IP address</th><th>Failed logins</th></tr>\n")
