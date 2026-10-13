@@ -56,5 +56,6 @@ cur.execute("DELETE FROM failed_logins")
 for ip in ips:
     cur.execute("INSERT INTO failed_logins (ip) VALUES (?)", (ip,))
 
+cur
 conn.commit()
 conn.close()
